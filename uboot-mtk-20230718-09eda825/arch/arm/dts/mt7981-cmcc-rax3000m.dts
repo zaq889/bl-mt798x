@@ -15,6 +15,27 @@
 		tick-timer = &timer0;
 	};
 
+ 	mtd-layout {
+
+		layout@0 {
+			label = "default";
+			mtdids = "nmbm0=nmbm0";
+			mtdparts = "nmbm0:1024k(bl2),512k(u-boot-env),2048k(factory),2048k(fip),116736k(ubi)";
+		};		
+
+		layout@1 {
+			label = "ubi-240m";
+			mtdids = "nmbm0=nmbm0";
+			mtdparts = "nmbm0:1024k(bl2),512k(u-boot-env),2048k(factory),2048k(fip),245760k(ubi)";
+		};
+
+		layout@2 {
+			label = "ubi-480m";
+			mtdids = "nmbm0=nmbm0";
+			mtdparts = "nmbm0:1024k(bl2),512k(u-boot-env),2048k(factory),2048k(fip),491520k(ubi)";
+		};
+ 	};
+
 	config {
 		bootcmd = "mtkboardboot";
 		blink_led = "blue:system";
